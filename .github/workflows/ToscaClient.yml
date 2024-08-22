@@ -1,0 +1,17 @@
+name: Execute Tosca Execution Client Script
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  execute-tosca-script:
+    runs-on: windows-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Execute Tosca Execution Client PowerShell Script
+      shell: pwsh
+      run: ./tosca_execution_client.ps1
